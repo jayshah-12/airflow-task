@@ -1,0 +1,145 @@
+import requests
+import pandas as pd
+from sqlalchemy import create_engine
+import mysql.connector
+from mysql.connector import Error
+import secret
+
+def fetch_data(base_url, url, params, api_key, no_of_records=None):
+    """
+    Fetch data from EIA API.
+    :param base_url: Base URL for the API.
+    :param url: API url (specific URL path).
+    :param params: Parameters for the API call.
+    :param api_key: Your API key.
+    :param no_of_records: Maximum number of records to fetch.
+    :return: DataFrame containing the fetched data.
+    """
+    complete_data = pd.DataFrame()
+    params['api_key'] = api_key
+    params['offset'] = 0
+
+    while True:
+        response = requests.get(f"{base_url}{url}", params=params)
+        response.raise_for_status()  # Raise an error for bad responses
+        records = response.json().get('response', {}).get('data', [])
+
+        if not records:
+            break
+
+        df = pd.DataFrame(records)
+        complete_data = pd.concat([complete_data, df], ignore_index=True)
+        params['offset'] += len(records)
+
+        if no_of_records is not None and len(complete_data) >= no_of_records:
+            return complete_data.iloc[:no_of_records]
+        print(len(complete_data))
+    
+    return complete_data
+
+
+def insert_data_to_mysql(dataframe, table_name, username, password, host, database):
+    """
+    Insert DataFrame into MySQL.
+    :param dataframe: DataFrame to insert.
+    :param table_name: Target table name.
+    :param username: MySQL username.
+    :param password: MySQL password.
+    :param host: MySQL host.
+    :param database: MySQL database name.
+    """
+    connection_string = f'mysql+pymysql://{username}:{password}@{host}/{database}'
+    engine = create_engine(connection_string)
+
+    with engine.begin() as connection:
+        dataframe.to_sql(table_name, con=connection, if_exists='replace', index=False)
+    
+    print(f"Data stored in table '{table_name}'.")
+
+
+def call_stored_procedure(proc_name, username, password, host, database):
+    """
+    Execute a stored procedure in MySQL.
+    :param proc_name: Name of the stored procedure to call.
+    :param username: MySQL username.
+    :param password: MySQL password.
+    :param host: MySQL host.
+    :param database: MySQL database name.
+    """
+    try:
+        with mysql.connector.connect(
+            host=host,
+            database=database,
+            user=username,
+            password=password
+        ) as connection:
+            cursor = connection.cursor()
+            cursor.callproc(proc_name)
+            connection.commit()
+            print(f"Stored procedure '{proc_name}' executed successfully.")
+    except Error as e:
+        print(f"Error: {e}")
+
+
+
+def main():
+    base_url = "https://api.eia.gov/v2/"
+    api_key = secret.api_key
+
+    # Define MySQL credentials
+    mysql_credentials = {
+        "username": 'root',
+        "password": 'root',
+        "host": 'localhost',
+        "database": 'eia'
+    }
+
+    # Define API calls
+    api_calls = [
+        {
+            "url": "co2-emissions/co2-emissions-aggregates/data/",
+            "params": {
+                "frequency": "annual",
+                "data[0]": "value"
+            },
+            "columns": ['period', 'fuel-name', 'state-name', 'value', 'value-units'],
+            "table_name": "emission_co2_source"
+        },
+        {
+            "url": "electricity/rto/daily-fuel-type-data/data/",
+            "params": {
+                "frequency": "daily",
+                "data[0]": "value"
+            },
+            "columns": ['period', 'respondent-name', 'type-name', 'value', 'value-units'],
+            "table_name": "daily_electricity_source",
+            "no_of_records": 20000
+        },
+        {
+            "url": "international/data/",
+            "params": {
+                "frequency": "annual",
+                "data[0]": "value",
+                "facets[productId][]": [116, 33, 37],
+                "facets[countryRegionId][]": "USA"
+            },
+            "columns": ['period', 'productName', 'activityName', 'unitName', 'value'],
+            "table_name": "renewable_generation_source",
+            "filter": lambda df: df[((df['activityName'] == 'Generation') & (df['unitName'] == 'billion kilowatthours')) | (df['activityName'] == 'Capacity')]
+        }
+    ]
+
+    # Fetch data and store in database
+    for call in api_calls:
+        data = fetch_data(base_url, call["url"], call["params"], api_key, no_of_records=call.get("no_of_records"))
+        if 'filter' in call:
+            data = call['filter'](data)
+        df = data[call["columns"]]
+        insert_data_to_mysql(df, call["table_name"], **mysql_credentials)
+
+    # Call the stored procedure
+    call_stored_procedure('calculate_co2_reduction', **mysql_credentials)
+
+
+if __name__ == "__main__":
+    main()

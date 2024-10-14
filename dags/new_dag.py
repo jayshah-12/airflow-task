@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from datetime import datetime, timedelta
+from datetime import datetime
 import mysql.connector
 from mysql.connector import Error
 import time
@@ -12,7 +12,7 @@ from airflow.models import Variable
 
 
 
-# Default arguments for the DAG
+
 default_args = {
     'owner': 'airflow',
     'start_date': datetime(2023, 10, 1),

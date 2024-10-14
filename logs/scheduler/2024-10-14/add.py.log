@@ -1,0 +1,255 @@
+[2024-10-14T11:24:15.484+0000] {processor.py:186} INFO - Started process (PID=40622) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:24:15.485+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:24:15.486+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.486+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:24:15.537+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:24:15.682+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.681+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:add_two_numbers
+[2024-10-14T11:24:15.700+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.700+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:add_two_numbers
+[2024-10-14T11:24:15.716+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.715+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:add_two_numbers
+[2024-10-14T11:24:15.736+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.735+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:add_two_numbers
+[2024-10-14T11:24:15.748+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.748+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:add_two_numbers
+[2024-10-14T11:24:15.764+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.764+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:add_two_numbers
+[2024-10-14T11:24:15.777+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.776+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:add_two_numbers
+[2024-10-14T11:24:15.778+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.778+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:24:15.795+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.795+0000] {dag.py:3252} INFO - Creating ORM DAG for add_two_numbers
+[2024-10-14T11:24:15.797+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:15.796+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:24:15.830+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.352 seconds
+[2024-10-14T11:24:46.202+0000] {processor.py:186} INFO - Started process (PID=40686) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:24:46.204+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:24:46.206+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:46.206+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:24:46.244+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:24:46.267+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:46.267+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:24:46.284+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:24:46.284+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:24:46.317+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.121 seconds
+[2024-10-14T11:25:16.626+0000] {processor.py:186} INFO - Started process (PID=40750) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:25:16.628+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:25:16.629+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:16.629+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:25:16.660+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:25:16.682+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:16.682+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:25:16.698+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:16.697+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:25:16.724+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.103 seconds
+[2024-10-14T11:25:47.025+0000] {processor.py:186} INFO - Started process (PID=40814) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:25:47.027+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:25:47.029+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:47.028+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:25:47.062+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:25:47.085+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:47.084+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:25:47.099+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:25:47.099+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:25:47.126+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.107 seconds
+[2024-10-14T11:26:17.944+0000] {processor.py:186} INFO - Started process (PID=40878) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:26:17.945+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:26:17.947+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:17.947+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:26:17.978+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:26:18.000+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:17.999+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:26:18.016+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:18.016+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:26:18.044+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.105 seconds
+[2024-10-14T11:26:48.889+0000] {processor.py:186} INFO - Started process (PID=40942) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:26:48.891+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:26:48.893+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:48.892+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:26:48.924+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:26:48.948+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:48.947+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:26:48.965+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:26:48.964+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:26:48.988+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.104 seconds
+[2024-10-14T11:27:19.748+0000] {processor.py:186} INFO - Started process (PID=41006) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:27:19.749+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:27:19.751+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:19.751+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:27:19.784+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:27:19.805+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:19.805+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:27:19.821+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:19.820+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:27:19.849+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.107 seconds
+[2024-10-14T11:27:50.092+0000] {processor.py:186} INFO - Started process (PID=41070) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:27:50.093+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:27:50.094+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:50.094+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:27:50.124+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:27:50.144+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:50.144+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:27:50.162+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:27:50.161+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:27:50.186+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.100 seconds
+[2024-10-14T11:28:20.331+0000] {processor.py:186} INFO - Started process (PID=41134) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:28:20.332+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:28:20.334+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:20.333+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:28:20.363+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:28:20.386+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:20.386+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:28:20.410+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:20.409+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:28:20.437+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.113 seconds
+[2024-10-14T11:28:51.122+0000] {processor.py:186} INFO - Started process (PID=41197) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:28:51.124+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:28:51.125+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:51.125+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:28:51.160+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:28:51.183+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:51.182+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:28:51.199+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:28:51.198+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:28:51.228+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.112 seconds
+[2024-10-14T11:29:21.847+0000] {processor.py:186} INFO - Started process (PID=41261) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:29:21.848+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:29:21.849+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:21.849+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:29:21.889+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:29:21.913+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:21.913+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:29:21.930+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:21.930+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:29:21.958+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.117 seconds
+[2024-10-14T11:29:52.759+0000] {processor.py:186} INFO - Started process (PID=41325) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:29:52.761+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:29:52.762+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:52.762+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:29:52.814+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:29:52.869+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:52.869+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:29:52.912+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:29:52.911+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:29:52.956+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.202 seconds
+[2024-10-14T11:30:23.200+0000] {processor.py:186} INFO - Started process (PID=41389) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:30:23.202+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:30:23.204+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:23.203+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:30:23.237+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:30:23.265+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:23.265+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:30:23.287+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:23.287+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:30:23.321+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.128 seconds
+[2024-10-14T11:30:53.660+0000] {processor.py:186} INFO - Started process (PID=41453) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:30:53.661+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:30:53.663+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:53.662+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:30:53.695+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:30:53.716+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:53.716+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:30:53.733+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:30:53.732+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:30:53.757+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.104 seconds
+[2024-10-14T11:31:24.401+0000] {processor.py:186} INFO - Started process (PID=41517) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:31:24.403+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:31:24.405+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:24.404+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:31:24.440+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:31:24.463+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:24.463+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:31:24.479+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:24.478+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:31:24.510+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.116 seconds
+[2024-10-14T11:31:54.754+0000] {processor.py:186} INFO - Started process (PID=41581) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:31:54.755+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:31:54.757+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:54.756+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:31:54.789+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:31:54.814+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:54.813+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:31:54.832+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:31:54.832+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:31:54.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.119 seconds
+[2024-10-14T11:32:25.055+0000] {processor.py:186} INFO - Started process (PID=41645) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:32:25.491+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:32:25.495+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:25.494+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:32:25.534+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:32:25.560+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:25.560+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:32:25.586+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:25.585+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:32:25.627+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.577 seconds
+[2024-10-14T11:32:55.759+0000] {processor.py:186} INFO - Started process (PID=41709) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:32:55.761+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:32:55.762+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:55.762+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:32:55.794+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:32:55.817+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:55.816+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:32:55.833+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:32:55.832+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:32:55.861+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.108 seconds
+[2024-10-14T11:33:26.016+0000] {processor.py:186} INFO - Started process (PID=41773) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:33:26.017+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:33:26.021+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:26.020+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:33:26.056+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:33:26.077+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:26.077+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:33:26.094+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:26.093+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:33:26.121+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.111 seconds
+[2024-10-14T11:33:56.279+0000] {processor.py:186} INFO - Started process (PID=41837) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:33:56.280+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:33:56.282+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:56.281+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:33:56.313+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:33:56.337+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:56.336+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:33:56.352+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:33:56.352+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:33:56.378+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.105 seconds
+[2024-10-14T11:34:27.238+0000] {processor.py:186} INFO - Started process (PID=41901) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:34:27.240+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:34:27.242+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:27.241+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:34:27.275+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:34:27.297+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:27.297+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:34:27.314+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:27.314+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:34:27.346+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.115 seconds
+[2024-10-14T11:34:57.420+0000] {processor.py:186} INFO - Started process (PID=41964) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:34:57.423+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:34:57.425+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:57.424+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:34:57.492+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:34:57.526+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:57.525+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:34:57.551+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:34:57.550+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:34:57.602+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.194 seconds
+[2024-10-14T11:35:27.712+0000] {processor.py:186} INFO - Started process (PID=42028) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:35:27.715+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:35:27.719+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:27.718+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:35:27.780+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:35:27.831+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:27.830+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:35:27.861+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:27.861+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:35:27.899+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.197 seconds
+[2024-10-14T11:35:58.330+0000] {processor.py:186} INFO - Started process (PID=42092) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:35:58.333+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:35:58.336+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:58.335+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:35:58.380+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:35:58.423+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:58.422+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:35:58.451+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:35:58.451+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:35:58.492+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.169 seconds
+[2024-10-14T11:36:29.412+0000] {processor.py:186} INFO - Started process (PID=42156) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:36:29.414+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:36:29.416+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:36:29.416+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:36:29.455+0000] {processor.py:925} INFO - DAG(s) 'add_two_numbers' retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:36:29.481+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:36:29.480+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T11:36:29.498+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:36:29.498+0000] {dag.py:4156} INFO - Setting next_dagrun for add_two_numbers to None, run_after=None
+[2024-10-14T11:36:29.528+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.126 seconds
+[2024-10-14T11:36:41.904+0000] {processor.py:186} INFO - Started process (PID=42177) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:36:41.906+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:36:41.909+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:36:41.908+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:36:42.035+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:36:42.010+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/add.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'add' from partially initialized module 'add' (most likely due to a circular import) (/opt/airflow/dags/add.py)
+[2024-10-14T11:36:42.050+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:36:42.102+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.209 seconds
+[2024-10-14T11:37:12.250+0000] {processor.py:186} INFO - Started process (PID=42240) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:37:12.253+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:37:12.258+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:37:12.257+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:37:12.364+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:37:12.330+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/add.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'add' from partially initialized module 'add' (most likely due to a circular import) (/opt/airflow/dags/add.py)
+[2024-10-14T11:37:12.380+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:37:12.419+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.180 seconds
+[2024-10-14T11:37:43.179+0000] {processor.py:186} INFO - Started process (PID=42302) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:37:43.181+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:37:43.183+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:37:43.182+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:37:43.235+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:37:43.219+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/add.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/add.py", line 5, in <module>
+    from add import add  # This imports the add function from your add.py file
+    ^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'add' from partially initialized module 'add' (most likely due to a circular import) (/opt/airflow/dags/add.py)
+[2024-10-14T11:37:43.245+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:37:43.279+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.107 seconds
+[2024-10-14T11:38:13.544+0000] {processor.py:186} INFO - Started process (PID=42366) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:38:13.548+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:38:13.553+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:38:13.552+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:38:13.574+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:38:13.573+0000] {dagbag.py:365} INFO - File /opt/airflow/dags/add.py assumed to contain no DAGs. Skipping.
+[2024-10-14T11:38:13.576+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:38:13.609+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.081 seconds
+[2024-10-14T11:38:43.895+0000] {processor.py:186} INFO - Started process (PID=42430) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:38:43.898+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:38:43.900+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:38:43.900+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:38:43.921+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:38:43.920+0000] {dagbag.py:365} INFO - File /opt/airflow/dags/add.py assumed to contain no DAGs. Skipping.
+[2024-10-14T11:38:43.923+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:38:43.942+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.057 seconds
+[2024-10-14T11:39:14.514+0000] {processor.py:186} INFO - Started process (PID=42494) to work on /opt/airflow/dags/add.py
+[2024-10-14T11:39:14.518+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/add.py for tasks to queue
+[2024-10-14T11:39:14.522+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:39:14.521+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/add.py
+[2024-10-14T11:39:14.555+0000] {logging_mixin.py:190} INFO - [2024-10-14T11:39:14.555+0000] {dagbag.py:365} INFO - File /opt/airflow/dags/add.py assumed to contain no DAGs. Skipping.
+[2024-10-14T11:39:14.557+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/add.py
+[2024-10-14T11:39:14.610+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/add.py took 0.106 seconds
