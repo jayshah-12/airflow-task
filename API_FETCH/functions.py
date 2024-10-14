@@ -25,10 +25,10 @@ def fetch_data(api_url, params, no_of_records=None):
 
     while True:
         response = requests.get(api_url, params=params)
-
+      
         data = response.json()     #store the respone in json format in data
         records = data['response']['data']   #fetch the data from nested dictionary 
-
+       
         if not records:
             break
 
