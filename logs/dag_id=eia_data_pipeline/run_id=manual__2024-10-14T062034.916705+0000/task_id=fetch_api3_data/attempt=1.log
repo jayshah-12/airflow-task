@@ -1,0 +1,42 @@
+[2024-10-14T06:21:21.907+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-14T06:21:21.971+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: eia_data_pipeline.fetch_api3_data manual__2024-10-14T06:20:34.916705+00:00 [queued]>
+[2024-10-14T06:21:21.999+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: eia_data_pipeline.fetch_api3_data manual__2024-10-14T06:20:34.916705+00:00 [queued]>
+[2024-10-14T06:21:22.001+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-14T06:21:22.062+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): fetch_api3_data> on 2024-10-14 06:20:34.916705+00:00
+[2024-10-14T06:21:22.252+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=897) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-14T06:21:22.311+0000] {standard_task_runner.py:72} INFO - Started process 910 to run task
+[2024-10-14T06:21:22.359+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'eia_data_pipeline', 'fetch_api3_data', 'manual__2024-10-14T06:20:34.916705+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/new_dag.py', '--cfg-path', '/tmp/tmph0tq1uqz']
+[2024-10-14T06:21:22.366+0000] {standard_task_runner.py:105} INFO - Job 49: Subtask fetch_api3_data
+[2024-10-14T06:21:23.354+0000] {task_command.py:467} INFO - Running <TaskInstance: eia_data_pipeline.fetch_api3_data manual__2024-10-14T06:20:34.916705+00:00 [running]> on host 7aa864b16460
+[2024-10-14T06:21:24.064+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='eia_data_pipeline' AIRFLOW_CTX_TASK_ID='fetch_api3_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-14T06:20:34.916705+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-14T06:20:34.916705+00:00'
+[2024-10-14T06:21:24.075+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-14T06:21:24.076+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-14T06:21:24.077+0000] {logging_mixin.py:190} INFO - Current task name:fetch_api3_data state:running start_date:2024-10-14 06:21:21.973281+00:00
+[2024-10-14T06:21:24.078+0000] {logging_mixin.py:190} INFO - Dag name:eia_data_pipeline and current dag run status:running
+[2024-10-14T06:21:24.079+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-14T06:21:30.100+0000] {logging_mixin.py:190} INFO -     period       productName activityName               unitName         value
+0     2008  Hydroelectricity     Capacity      million kilowatts         77.93
+11    2011  Hydroelectricity     Capacity      million kilowatts        78.652
+13    2015             Solar   Generation  billion kilowatthours   39.03217093
+14    2022  Hydroelectricity   Generation  billion kilowatthours  254.78866712
+15    1987  Hydroelectricity   Generation  billion kilowatthours  252.85609314
+..     ...               ...          ...                    ...           ...
+603   1996  Hydroelectricity     Capacity      million kilowatts      76.43742
+604   1985  Hydroelectricity     Capacity      million kilowatts          88.9
+606   1991  Hydroelectricity     Capacity      million kilowatts      76.03631
+607   2017  Hydroelectricity   Generation  billion kilowatthours  300.33292968
+608   2010              Wind     Capacity      million kilowatts       39.1345
+
+[235 rows x 5 columns] stored in MySQL
+[2024-10-14T06:21:30.102+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-14T06:21:30.125+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-14T06:21:30.126+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=eia_data_pipeline, task_id=fetch_api3_data, run_id=manual__2024-10-14T06:20:34.916705+00:00, execution_date=20241014T062034, start_date=20241014T062121, end_date=20241014T062130
+[2024-10-14T06:21:30.156+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-14T06:21:30.157+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-14T06:21:30.159+0000] {logging_mixin.py:190} INFO - Dag name:eia_data_pipeline queued_at:2024-10-14 06:20:35.286999+00:00
+[2024-10-14T06:21:30.160+0000] {logging_mixin.py:190} INFO - Task hostname:7aa864b16460 operator:PythonOperator
+[2024-10-14T06:21:30.207+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-14T06:21:30.302+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-14T06:21:30.310+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
