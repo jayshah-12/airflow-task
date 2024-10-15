@@ -5880,3 +5880,143 @@ airflow.exceptions.AirflowException: `python_callable` param must be callable
 [2024-10-14T12:03:00.963+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:03:00.962+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2024-10-14T12:03:01.051+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:03:01.050+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
 [2024-10-14T12:03:01.103+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.606 seconds
+[2024-10-14T12:03:31.499+0000] {processor.py:186} INFO - Started process (PID=45513) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:03:31.501+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:03:31.505+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:03:31.503+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:03:32.048+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:03:32.142+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:03:32.140+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:03:32.220+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:03:32.219+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:03:32.286+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.810 seconds
+[2024-10-14T12:04:02.697+0000] {processor.py:186} INFO - Started process (PID=45577) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:02.700+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:04:02.703+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:02.702+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:03.069+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:03.114+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:03.113+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:04:03.177+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:03.176+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:04:03.223+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.536 seconds
+[2024-10-14T12:04:33.505+0000] {processor.py:186} INFO - Started process (PID=45642) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:33.509+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:04:33.512+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:33.512+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:33.927+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:04:33.987+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:33.986+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:04:34.062+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:04:34.062+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:04:34.127+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.634 seconds
+[2024-10-14T12:05:06.772+0000] {processor.py:186} INFO - Started process (PID=45706) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:06.777+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:05:06.787+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:06.785+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:10.882+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:11.126+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:11.125+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:05:11.337+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:11.336+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:05:11.553+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 4.805 seconds
+[2024-10-14T12:05:42.755+0000] {processor.py:186} INFO - Started process (PID=45770) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:42.772+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:05:42.782+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:42.782+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:49.450+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:05:52.608+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:52.599+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:05:54.707+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:05:54.705+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:05:55.238+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 12.506 seconds
+[2024-10-14T12:08:18.632+0000] {processor.py:186} INFO - Started process (PID=45839) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:18.652+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:08:18.669+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:18.665+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:23.001+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:23.193+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:23.193+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:08:23.455+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:23.454+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:08:23.583+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 5.402 seconds
+[2024-10-14T12:08:54.072+0000] {processor.py:186} INFO - Started process (PID=45903) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:54.077+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:08:54.083+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:54.082+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:55.013+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:08:55.078+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:55.077+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:08:55.216+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:08:55.215+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:08:55.314+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 1.264 seconds
+[2024-10-14T12:09:25.721+0000] {processor.py:186} INFO - Started process (PID=45973) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:25.723+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:09:25.727+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:25.726+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:26.125+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:26.164+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:26.163+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:09:26.203+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:26.203+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:09:26.237+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.527 seconds
+[2024-10-14T12:09:56.347+0000] {processor.py:186} INFO - Started process (PID=46036) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:56.349+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:09:56.352+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:56.352+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:56.646+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:09:56.686+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:56.686+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:09:56.740+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:09:56.740+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:09:56.811+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.474 seconds
+[2024-10-14T12:10:26.929+0000] {processor.py:186} INFO - Started process (PID=46100) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:26.931+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:10:26.933+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:26.933+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:27.218+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:27.262+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:27.262+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:10:27.395+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:27.395+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:10:27.436+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.516 seconds
+[2024-10-14T12:10:58.189+0000] {processor.py:186} INFO - Started process (PID=46163) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:58.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:10:58.198+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:58.196+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:58.600+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:10:58.640+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:58.639+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:10:58.686+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:10:58.686+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:10:58.727+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.557 seconds
+[2024-10-14T12:11:28.923+0000] {processor.py:186} INFO - Started process (PID=46226) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:11:28.927+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:11:28.930+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:11:28.929+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:11:29.274+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:11:29.325+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:11:29.324+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:11:29.380+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:11:29.379+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:11:29.433+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.528 seconds
+[2024-10-14T12:12:00.029+0000] {processor.py:186} INFO - Started process (PID=46289) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:00.033+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:12:00.037+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:00.036+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:00.370+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:00.420+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:00.420+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:12:00.472+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:00.471+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:12:00.547+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.537 seconds
+[2024-10-14T12:12:30.917+0000] {processor.py:186} INFO - Started process (PID=46354) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:30.919+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:12:30.923+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:30.922+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:31.200+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:12:31.238+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:31.237+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:12:31.284+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:12:31.284+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:12:31.367+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.462 seconds
+[2024-10-14T12:13:01.612+0000] {processor.py:186} INFO - Started process (PID=46416) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:01.615+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:13:01.618+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:01.617+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:01.954+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:01.993+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:01.992+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:13:02.039+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:02.038+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:13:02.097+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.496 seconds
+[2024-10-14T12:13:32.339+0000] {processor.py:186} INFO - Started process (PID=46480) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:32.341+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:13:32.345+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:32.344+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:32.771+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:13:32.819+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:32.818+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:13:32.872+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:13:32.872+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:13:32.930+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.606 seconds
+[2024-10-14T12:14:03.191+0000] {processor.py:186} INFO - Started process (PID=46543) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:03.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:14:03.195+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:03.195+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:03.474+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:03.513+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:03.512+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:14:03.560+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:03.559+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:14:03.609+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.427 seconds
+[2024-10-14T12:14:34.298+0000] {processor.py:186} INFO - Started process (PID=46606) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:34.301+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:14:34.304+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:34.303+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:34.596+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:14:34.633+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:34.633+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:14:34.682+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:14:34.682+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:14:34.725+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.444 seconds
+[2024-10-14T12:15:04.970+0000] {processor.py:186} INFO - Started process (PID=46669) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:04.974+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:15:04.979+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:04.978+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:05.289+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:05.331+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:05.330+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:15:05.398+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:05.398+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:15:05.451+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.498 seconds
+[2024-10-14T12:15:35.891+0000] {processor.py:186} INFO - Started process (PID=46733) to work on /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:35.894+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-10-14T12:15:35.899+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:35.897+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:36.302+0000] {processor.py:925} INFO - DAG(s) 'eia_data_pipeline' retrieved from /opt/airflow/dags/new_dag.py
+[2024-10-14T12:15:36.354+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:36.353+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-10-14T12:15:36.443+0000] {logging_mixin.py:190} INFO - [2024-10-14T12:15:36.442+0000] {dag.py:4156} INFO - Setting next_dagrun for eia_data_pipeline to 2024-10-14 00:00:00+00:00, run_after=2024-10-15 00:00:00+00:00
+[2024-10-14T12:15:36.509+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.633 seconds
