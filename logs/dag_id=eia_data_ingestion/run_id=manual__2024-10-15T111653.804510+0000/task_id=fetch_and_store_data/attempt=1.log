@@ -1,0 +1,173 @@
+[2024-10-15T11:17:12.361+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-15T11:17:12.400+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:16:53.804510+00:00 [queued]>
+[2024-10-15T11:17:12.414+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:16:53.804510+00:00 [queued]>
+[2024-10-15T11:17:12.416+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-15T11:17:12.444+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): fetch_and_store_data> on 2024-10-15 11:16:53.804510+00:00
+[2024-10-15T11:17:12.493+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4326) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-15T11:17:12.496+0000] {standard_task_runner.py:72} INFO - Started process 4328 to run task
+[2024-10-15T11:17:12.494+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'eia_data_ingestion', 'fetch_and_store_data', 'manual__2024-10-15T11:16:53.804510+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/dag2.py', '--cfg-path', '/tmp/tmptr0d594i']
+[2024-10-15T11:17:12.496+0000] {standard_task_runner.py:105} INFO - Job 64: Subtask fetch_and_store_data
+[2024-10-15T11:17:12.579+0000] {task_command.py:467} INFO - Running <TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:16:53.804510+00:00 [running]> on host 7aa864b16460
+[2024-10-15T11:17:12.717+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='eia_data_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-15T11:16:53.804510+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-15T11:16:53.804510+00:00'
+[2024-10-15T11:17:12.719+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-15T11:17:12.720+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-15T11:17:12.721+0000] {logging_mixin.py:190} INFO - Current task name:fetch_and_store_data state:running start_date:2024-10-15 11:17:12.401427+00:00
+[2024-10-15T11:17:12.722+0000] {logging_mixin.py:190} INFO - Dag name:eia_data_ingestion and current dag run status:running
+[2024-10-15T11:17:12.722+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-15T11:17:16.332+0000] {logging_mixin.py:190} INFO - Fetched 5000 records.
+[2024-10-15T11:17:19.297+0000] {logging_mixin.py:190} INFO - Fetched 10000 records.
+[2024-10-15T11:17:21.798+0000] {logging_mixin.py:190} INFO - Fetched 15000 records.
+[2024-10-15T11:17:24.318+0000] {logging_mixin.py:190} INFO - Fetched 20000 records.
+[2024-10-15T11:17:26.896+0000] {logging_mixin.py:190} INFO - Fetched 25000 records.
+[2024-10-15T11:17:28.943+0000] {logging_mixin.py:190} INFO - Fetched 30000 records.
+[2024-10-15T11:17:30.955+0000] {logging_mixin.py:190} INFO - Fetched 35000 records.
+[2024-10-15T11:17:33.130+0000] {logging_mixin.py:190} INFO - Fetched 40000 records.
+[2024-10-15T11:17:35.689+0000] {logging_mixin.py:190} INFO - Fetched 45000 records.
+[2024-10-15T11:17:37.825+0000] {logging_mixin.py:190} INFO - Fetched 50000 records.
+[2024-10-15T11:17:43.285+0000] {logging_mixin.py:190} INFO - Fetched 55000 records.
+[2024-10-15T11:17:51.304+0000] {logging_mixin.py:190} INFO - Fetched 60000 records.
+[2024-10-15T11:17:53.360+0000] {logging_mixin.py:190} INFO - Fetched 64896 records.
+[2024-10-15T11:18:02.341+0000] {logging_mixin.py:190} INFO - Data stored in table 'emission_co2_source'.
+[2024-10-15T11:18:04.066+0000] {logging_mixin.py:190} INFO - Fetched 610 records.
+[2024-10-15T11:18:07.497+0000] {logging_mixin.py:190} INFO - Data stored in table 'renewable_generation_source'.
+[2024-10-15T11:18:10.361+0000] {logging_mixin.py:190} INFO - Fetched 5000 records.
+[2024-10-15T11:18:13.733+0000] {logging_mixin.py:190} INFO - Fetched 10000 records.
+[2024-10-15T11:18:16.930+0000] {logging_mixin.py:190} INFO - Fetched 15000 records.
+[2024-10-15T11:18:19.476+0000] {logging_mixin.py:190} INFO - Fetched 20000 records.
+[2024-10-15T11:18:22.890+0000] {logging_mixin.py:190} INFO - Fetched 25000 records.
+[2024-10-15T11:18:25.463+0000] {logging_mixin.py:190} INFO - Fetched 30000 records.
+[2024-10-15T11:18:27.391+0000] {logging_mixin.py:190} INFO - Fetched 35000 records.
+[2024-10-15T11:18:29.269+0000] {logging_mixin.py:190} INFO - Fetched 40000 records.
+[2024-10-15T11:18:31.155+0000] {logging_mixin.py:190} INFO - Fetched 45000 records.
+[2024-10-15T11:18:33.059+0000] {logging_mixin.py:190} INFO - Fetched 50000 records.
+[2024-10-15T11:18:36.319+0000] {logging_mixin.py:190} INFO - Fetched 55000 records.
+[2024-10-15T11:18:38.250+0000] {logging_mixin.py:190} INFO - Fetched 60000 records.
+[2024-10-15T11:18:42.937+0000] {logging_mixin.py:190} INFO - Fetched 65000 records.
+[2024-10-15T11:18:45.498+0000] {logging_mixin.py:190} INFO - Fetched 70000 records.
+[2024-10-15T11:18:48.151+0000] {logging_mixin.py:190} INFO - Fetched 75000 records.
+[2024-10-15T11:18:49.937+0000] {logging_mixin.py:190} INFO - Fetched 80000 records.
+[2024-10-15T11:18:52.419+0000] {logging_mixin.py:190} INFO - Fetched 85000 records.
+[2024-10-15T11:18:54.274+0000] {logging_mixin.py:190} INFO - Fetched 90000 records.
+[2024-10-15T11:18:56.163+0000] {logging_mixin.py:190} INFO - Fetched 95000 records.
+[2024-10-15T11:18:58.980+0000] {logging_mixin.py:190} INFO - Fetched 100000 records.
+[2024-10-15T11:19:00.809+0000] {logging_mixin.py:190} INFO - Fetched 105000 records.
+[2024-10-15T11:19:03.148+0000] {logging_mixin.py:190} INFO - Fetched 110000 records.
+[2024-10-15T11:19:05.652+0000] {logging_mixin.py:190} INFO - Fetched 115000 records.
+[2024-10-15T11:19:07.727+0000] {logging_mixin.py:190} INFO - Fetched 120000 records.
+[2024-10-15T11:19:10.747+0000] {logging_mixin.py:190} INFO - Fetched 125000 records.
+[2024-10-15T11:19:13.061+0000] {logging_mixin.py:190} INFO - Fetched 130000 records.
+[2024-10-15T11:19:16.982+0000] {logging_mixin.py:190} INFO - Fetched 135000 records.
+[2024-10-15T11:19:20.154+0000] {logging_mixin.py:190} INFO - Fetched 140000 records.
+[2024-10-15T11:19:23.091+0000] {logging_mixin.py:190} INFO - Fetched 145000 records.
+[2024-10-15T11:19:45.732+0000] {logging_mixin.py:190} INFO - Fetched 150000 records.
+[2024-10-15T11:19:47.847+0000] {logging_mixin.py:190} INFO - Fetched 155000 records.
+[2024-10-15T11:19:49.771+0000] {logging_mixin.py:190} INFO - Fetched 160000 records.
+[2024-10-15T11:19:51.721+0000] {logging_mixin.py:190} INFO - Fetched 165000 records.
+[2024-10-15T11:19:53.583+0000] {logging_mixin.py:190} INFO - Fetched 170000 records.
+[2024-10-15T11:19:55.861+0000] {logging_mixin.py:190} INFO - Fetched 175000 records.
+[2024-10-15T11:19:58.926+0000] {logging_mixin.py:190} INFO - Fetched 180000 records.
+[2024-10-15T11:20:44.971+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/functions.py", line 85, in process_api_calls
+    data = fetch_data(call, api_key, no_of_records=call.get("no_of_records"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/functions.py", line 26, in fetch_data
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://api.eia.gov/v2/electricity/rto/daily-fuel-type-data/data/?frequency=daily&data%5B0%5D=value&api_key=ixxID9vFalaJnrWYcqNbAPMFRkmKIiC4OJlAGoae&offset=180000
+[2024-10-15T11:20:45.420+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-10-15T11:20:45.422+0000] {logging_mixin.py:190} INFO - Task start:2024-10-15 11:17:12.401427+00:00 end:2024-10-15 11:20:45.397384+00:00 duration:212.995957
+[2024-10-15T11:20:45.431+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): fetch_and_store_data> dag:<DAG: eia_data_ingestion> dagrun:<DagRun eia_data_ingestion @ 2024-10-15 11:16:53.804510+00:00: manual__2024-10-15T11:16:53.804510+00:00, state:running, queued_at: 2024-10-15 11:16:53.844889+00:00. externally triggered: True>
+[2024-10-15T11:20:45.433+0000] {logging_mixin.py:190} INFO - Failure caused by 503 Server Error: Service Unavailable for url: https://api.eia.gov/v2/electricity/rto/daily-fuel-type-data/data/?frequency=daily&data%5B0%5D=value&api_key=ixxID9vFalaJnrWYcqNbAPMFRkmKIiC4OJlAGoae&offset=180000
+[2024-10-15T11:20:45.434+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=eia_data_ingestion, task_id=fetch_and_store_data, run_id=manual__2024-10-15T11:16:53.804510+00:00, execution_date=20241015T111653, start_date=20241015T111712, end_date=20241015T112045
+[2024-10-15T11:20:45.619+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-15T11:20:45.630+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 64 for task fetch_and_store_data (503 Server Error: Service Unavailable for url: https://api.eia.gov/v2/electricity/rto/daily-fuel-type-data/data/?frequency=daily&data%5B0%5D=value&api_key=ixxID9vFalaJnrWYcqNbAPMFRkmKIiC4OJlAGoae&offset=180000; 4328)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/functions.py", line 85, in process_api_calls
+    data = fetch_data(call, api_key, no_of_records=call.get("no_of_records"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/functions.py", line 26, in fetch_data
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://api.eia.gov/v2/electricity/rto/daily-fuel-type-data/data/?frequency=daily&data%5B0%5D=value&api_key=ixxID9vFalaJnrWYcqNbAPMFRkmKIiC4OJlAGoae&offset=180000
+[2024-10-15T11:20:45.795+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-10-15T11:20:46.202+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-15T11:20:46.209+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

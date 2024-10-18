@@ -5,6 +5,8 @@ from sqlalchemy import create_engine, text
 import mysql.connector
 from mysql.connector import Error
 
+mysql_connection_string = 'mysql+pymysql://root:root@localhost:3306/eia'
+engine = create_engine(mysql_connection_string)
 
 def fetch_data(api_url, params, no_of_records=None):
     """
@@ -20,7 +22,7 @@ def fetch_data(api_url, params, no_of_records=None):
 
 
     params['offset'] = 0
-    complete_data = pd.DataFrame()
+    # complete_data = pd.DataFrame()
     total_records_fetched = 0  
 
     while True:
@@ -33,17 +35,15 @@ def fetch_data(api_url, params, no_of_records=None):
             break
 
         df = pd.DataFrame(records)
-        complete_data = pd.concat([complete_data, df], ignore_index=True)
+        # complete_data = pd.concat([complete_data, df], ignore_index=True)
         total_records_fetched += len(records)      
         params['offset'] += len(records)   #increase offset by the no. of records fetched in the loop
-
-        if no_of_records is  not None:     #stop loop if records fetched are more than the required records
-            if total_records_fetched>=no_of_records:
-                return complete_data.iloc[:no_of_records]
-        print(len(complete_data))
+        df=df[['period','respondent-name','type-name','value','value-units']]
+        mysql_connect(df,'final_run' )
+        
         
     
-    return complete_data
+    
 
     
 
@@ -53,12 +53,11 @@ def mysql_connect(dataframe, table_name):
     :param dataframe: DataFrame name
     :param table_name: Table name
     """
-    mysql_connection_string = 'mysql+pymysql://root:root@localhost:3306/eia'
-    engine = create_engine(mysql_connection_string)
+
     
 
     with engine.begin() as connection:
-        dataframe.to_sql(table_name, con=connection, if_exists='replace', index=False)
+        dataframe.to_sql(table_name, con=connection, if_exists='append', index=False)
 
     print("stored in sql")
 

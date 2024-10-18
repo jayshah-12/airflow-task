@@ -1,0 +1,85 @@
+[2024-10-15T12:03:58.872+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-15T12:03:58.894+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:55:57.111813+00:00 [queued]>
+[2024-10-15T12:03:58.906+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:55:57.111813+00:00 [queued]>
+[2024-10-15T12:03:58.907+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-10-15T12:03:58.928+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): fetch_and_store_data> on 2024-10-15 11:55:57.111813+00:00
+[2024-10-15T12:03:58.944+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4671) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-15T12:03:58.946+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'eia_data_ingestion', 'fetch_and_store_data', 'manual__2024-10-15T11:55:57.111813+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/dag2.py', '--cfg-path', '/tmp/tmp_gpwpd0r']
+[2024-10-15T12:03:58.947+0000] {standard_task_runner.py:72} INFO - Started process 4673 to run task
+[2024-10-15T12:03:58.948+0000] {standard_task_runner.py:105} INFO - Job 67: Subtask fetch_and_store_data
+[2024-10-15T12:03:59.032+0000] {task_command.py:467} INFO - Running <TaskInstance: eia_data_ingestion.fetch_and_store_data manual__2024-10-15T11:55:57.111813+00:00 [running]> on host 7aa864b16460
+[2024-10-15T12:03:59.468+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='eia_data_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-15T11:55:57.111813+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-15T11:55:57.111813+00:00'
+[2024-10-15T12:03:59.490+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-15T12:03:59.493+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-15T12:03:59.494+0000] {logging_mixin.py:190} INFO - Current task name:fetch_and_store_data state:running start_date:2024-10-15 12:03:58.895912+00:00
+[2024-10-15T12:03:59.495+0000] {logging_mixin.py:190} INFO - Dag name:eia_data_ingestion and current dag run status:running
+[2024-10-15T12:03:59.495+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-15T12:04:02.498+0000] {logging_mixin.py:190} INFO - Fetched 5000 records.
+[2024-10-15T12:04:05.237+0000] {logging_mixin.py:190} INFO - Fetched 10000 records.
+[2024-10-15T12:04:08.984+0000] {logging_mixin.py:190} INFO - Fetched 15000 records.
+[2024-10-15T12:04:11.286+0000] {logging_mixin.py:190} INFO - Fetched 20000 records.
+[2024-10-15T12:04:13.329+0000] {logging_mixin.py:190} INFO - Fetched 25000 records.
+[2024-10-15T12:04:15.435+0000] {logging_mixin.py:190} INFO - Fetched 30000 records.
+[2024-10-15T12:04:17.402+0000] {logging_mixin.py:190} INFO - Fetched 35000 records.
+[2024-10-15T12:04:19.631+0000] {logging_mixin.py:190} INFO - Fetched 40000 records.
+[2024-10-15T12:04:21.552+0000] {logging_mixin.py:190} INFO - Fetched 45000 records.
+[2024-10-15T12:04:23.582+0000] {logging_mixin.py:190} INFO - Fetched 50000 records.
+[2024-10-15T12:04:25.732+0000] {logging_mixin.py:190} INFO - Fetched 55000 records.
+[2024-10-15T12:04:27.840+0000] {logging_mixin.py:190} INFO - Fetched 60000 records.
+[2024-10-15T12:04:30.455+0000] {logging_mixin.py:190} INFO - Fetched 64896 records.
+[2024-10-15T12:04:38.779+0000] {logging_mixin.py:190} INFO - Data stored in table 'emission_co2_source'.
+[2024-10-15T12:04:41.874+0000] {logging_mixin.py:190} INFO - Fetched 610 records.
+[2024-10-15T12:04:44.732+0000] {logging_mixin.py:190} INFO - Data stored in table 'renewable_generation_source'.
+[2024-10-15T12:04:47.823+0000] {logging_mixin.py:190} INFO - Fetched 5000 records.
+[2024-10-15T12:04:50.528+0000] {logging_mixin.py:190} INFO - Fetched 10000 records.
+[2024-10-15T12:04:53.238+0000] {logging_mixin.py:190} INFO - Fetched 15000 records.
+[2024-10-15T12:04:55.605+0000] {logging_mixin.py:190} INFO - Fetched 20000 records.
+[2024-10-15T12:04:57.616+0000] {logging_mixin.py:190} INFO - Fetched 25000 records.
+[2024-10-15T12:04:59.718+0000] {logging_mixin.py:190} INFO - Fetched 30000 records.
+[2024-10-15T12:05:02.581+0000] {logging_mixin.py:190} INFO - Fetched 35000 records.
+[2024-10-15T12:05:04.917+0000] {logging_mixin.py:190} INFO - Fetched 40000 records.
+[2024-10-15T12:05:06.987+0000] {logging_mixin.py:190} INFO - Fetched 45000 records.
+[2024-10-15T12:05:09.002+0000] {logging_mixin.py:190} INFO - Fetched 50000 records.
+[2024-10-15T12:05:11.044+0000] {logging_mixin.py:190} INFO - Fetched 55000 records.
+[2024-10-15T12:05:13.117+0000] {logging_mixin.py:190} INFO - Fetched 60000 records.
+[2024-10-15T12:05:17.569+0000] {logging_mixin.py:190} INFO - Fetched 65000 records.
+[2024-10-15T12:05:21.527+0000] {logging_mixin.py:190} INFO - Fetched 70000 records.
+[2024-10-15T12:05:25.804+0000] {logging_mixin.py:190} INFO - Fetched 75000 records.
+[2024-10-15T12:05:29.785+0000] {logging_mixin.py:190} INFO - Fetched 80000 records.
+[2024-10-15T12:05:50.554+0000] {logging_mixin.py:190} INFO - Fetched 85000 records.
+[2024-10-15T12:06:05.163+0000] {logging_mixin.py:190} INFO - Fetched 90000 records.
+[2024-10-15T12:06:15.294+0000] {logging_mixin.py:190} INFO - Fetched 95000 records.
+[2024-10-15T12:06:23.862+0000] {logging_mixin.py:190} INFO - Fetched 100000 records.
+[2024-10-15T12:06:56.095+0000] {logging_mixin.py:190} INFO - Fetched 105000 records.
+[2024-10-15T12:07:11.069+0000] {logging_mixin.py:190} INFO - Fetched 110000 records.
+[2024-10-15T12:07:21.570+0000] {logging_mixin.py:190} INFO - Fetched 115000 records.
+[2024-10-15T12:07:32.386+0000] {logging_mixin.py:190} INFO - Fetched 120000 records.
+[2024-10-15T12:07:40.863+0000] {logging_mixin.py:190} INFO - Fetched 125000 records.
+[2024-10-15T12:07:48.361+0000] {logging_mixin.py:190} INFO - Fetched 130000 records.
+[2024-10-15T12:07:56.177+0000] {logging_mixin.py:190} INFO - Fetched 135000 records.
+[2024-10-15T12:08:03.121+0000] {logging_mixin.py:190} INFO - Fetched 140000 records.
+[2024-10-15T12:08:09.425+0000] {logging_mixin.py:190} INFO - Fetched 145000 records.
+[2024-10-15T12:08:15.858+0000] {logging_mixin.py:190} INFO - Fetched 150000 records.
+[2024-10-15T12:08:22.596+0000] {logging_mixin.py:190} INFO - Fetched 155000 records.
+[2024-10-15T12:08:28.420+0000] {logging_mixin.py:190} INFO - Fetched 160000 records.
+[2024-10-15T12:08:33.750+0000] {logging_mixin.py:190} INFO - Fetched 165000 records.
+[2024-10-15T12:08:39.861+0000] {logging_mixin.py:190} INFO - Fetched 170000 records.
+[2024-10-15T12:08:45.373+0000] {logging_mixin.py:190} INFO - Fetched 175000 records.
+[2024-10-15T12:08:51.794+0000] {logging_mixin.py:190} INFO - Fetched 180000 records.
+[2024-10-15T12:08:57.044+0000] {logging_mixin.py:190} INFO - Fetched 185000 records.
+[2024-10-15T12:09:02.285+0000] {logging_mixin.py:190} INFO - Fetched 190000 records.
+[2024-10-15T12:09:07.754+0000] {logging_mixin.py:190} INFO - Fetched 195000 records.
+[2024-10-15T12:09:13.536+0000] {logging_mixin.py:190} INFO - Fetched 200000 records.
+[2024-10-15T12:09:19.373+0000] {logging_mixin.py:190} INFO - Fetched 205000 records.
+[2024-10-15T12:09:24.823+0000] {logging_mixin.py:190} INFO - Fetched 210000 records.
+[2024-10-15T12:09:30.482+0000] {logging_mixin.py:190} INFO - Fetched 215000 records.
+[2024-10-15T12:09:36.396+0000] {logging_mixin.py:190} INFO - Fetched 220000 records.
+[2024-10-15T12:09:37.758+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-10-15T12:09:37.850+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-10-15T12:09:37.903+0000] {process_utils.py:132} INFO - Sending 15 to group 4673. PIDs of all processes in the group: [4673]
+[2024-10-15T12:09:37.912+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 4673
+[2024-10-15T12:09:37.924+0000] {taskinstance.py:3092} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-10-15T12:09:39.057+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-15T12:09:39.362+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=4673, status='terminated', exitcode=0, started='12:03:58') (4673) terminated with exit code 0

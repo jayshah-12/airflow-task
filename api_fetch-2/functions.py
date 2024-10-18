@@ -17,7 +17,6 @@ def fetch_data(api_details, api_key, no_of_records=None):
     url = api_details['url']
     params = api_details['params']
     complete_data = pd.DataFrame()
-
     params['api_key'] = api_key
     params['offset'] = 0
 
