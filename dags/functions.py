@@ -18,7 +18,7 @@ def fetch_data(api_call, api_key, mysql_credentials):
     url = f"{base_url}{api_call['url']}"
     params = api_call['params']
     params['api_key'] = api_key  # Include the API key in the parameters
-
+    
     try:
         # Fetch total records to determine offsets
         print(f"Fetching total records for {api_call['table_name']} with URL: {url} and params: {params}")

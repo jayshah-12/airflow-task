@@ -13,33 +13,32 @@ failed_offset=[]
 base_url = "https://api.eia.gov/v2/"
 db_lock = threading.Lock()
 
-db_lock = threading.Lock()
 def fetch_data(api_call, api_key, mysql_credentials):
     url = f"{base_url}{api_call['url']}"
     params = api_call['params']
     params['api_key'] = api_key  # Include the API key in the parameters
-
+    dtype = api_call['dtype']
     try:
-        # Fetch total records to determine offsets
+        # Fetch total records to set the range of offsets
         print(f"Fetching total records for {api_call['table_name']} with URL: {url} and params: {params}")
         response = requests.get(url, params=params)
         response.raise_for_status()
         json_data = response.json()
         total_records = int(json_data['response']['total'])
-        print(f"Total records available for {api_call['table_name']}: {total_records}")
+        print(f"Total records available: {total_records}")
 
       
-
+ 
         # Thread executor to fetch data
-        with ThreadPoolExecutor(max_workers=10) as executor:
+        with ThreadPoolExecutor(max_workers=2) as executor:
             offset_map = {}      #map the offset with future object result
             for offset in range(0, total_records, 5000):
-                # Create a local copy of params for this offset
-                local_params = params.copy()
-                local_params['offset'] = offset  # Set the specific offset for this request
+                # temp params to avoid offset change in the main params
+                temp_params = params.copy()
+                temp_params['offset'] = offset  # Set the specific offset for this request
 
                 print(f"Submitting request for offset: {offset}")  # Debug statement
-                future = executor.submit(requests.get, url, local_params)  # Use the local copy
+                future = executor.submit(requests.get, url, temp_params)  # Use the local copy
                 offset_map[future] = offset
                 # print(offset_map)
 
@@ -53,7 +52,7 @@ def fetch_data(api_call, api_key, mysql_credentials):
 
                     if 'data' in data['response']:
                         df = pd.DataFrame(data['response']['data'])
-                        if df.empty:
+                        if df.empty: 
                             print(f"No data found for offset {offset}.")
                         else:
                             print(f"Data fetched for offset {offset}: {len(df)} records.")
@@ -62,10 +61,11 @@ def fetch_data(api_call, api_key, mysql_credentials):
                                 df = df[api_call['columns']]
                             # Insert data into MySQL
                             with db_lock:
-                                engine = create_engine(
-                                    f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
-                                df.to_sql(api_call['table_name'], engine, if_exists='append', index=False)
-                                print(f"Inserted {len(df)} records into {api_call['table_name']} at offset {offset}.")
+                                mysql_connect(df,api_call['table_name'],mysql_credentials,offset,dtype)
+                                # engine = create_engine(
+                                #     f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
+                                # df.to_sql(api_call['table_name'], engine, if_exists='append', index=False, dtype=dtype)
+                                # print(f"Inserted {len(df)} records into {api_call['table_name']} at offset {offset}.")
                                 time.sleep(0.5)  # Sleep for rate limiting
 
                     else:
@@ -81,10 +81,10 @@ def fetch_data(api_call, api_key, mysql_credentials):
         print(f"An error occurred while fetching data for {api_call['table_name']}: {str(e)}")
         failed_offset.append(offset)
 
-def mysql_connect(df, table_name, mysql_credentials, offset):
+def mysql_connect(df, table_name, mysql_credentials, offset,dtype):
     engine = create_engine(
         f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
-    df.to_sql(table_name, engine, if_exists='append', index=False)
+    df.to_sql(table_name, engine, if_exists='append', index=False,dtype=dtype)
     print(f"Inserted {len(df)} records into {table_name} at offset {offset}.")
 
 
