@@ -4,6 +4,7 @@ from airflow.utils.dates import days_ago
 from functions import fetch_data, call_stored_procedure
 from apicalls import api_calls
 from airflow.models import Variable
+from datetime import datetime
 api_key = Variable.get('api_key')
 
 mysql_credentials = {
@@ -16,7 +17,7 @@ mysql_credentials = {
 # Default arguments for the DAG
 default_args = {
     'owner': 'airflow',
-    'start_date': days_ago(1),
+    'start_date': datetime(2024, 10, 15),
     'retries': 1,
 }
 
@@ -25,7 +26,8 @@ dag = DAG(
     'eia_threading',
     default_args=default_args,
     description='DAG to fetch EIA API data and insert into MySQL',
-    schedule_interval='@daily',  # Adjust the schedule as needed
+    schedule_interval='@daily', 
+    catchup= False, 
 )
 
 # Task 1: Fetch data for all API calls

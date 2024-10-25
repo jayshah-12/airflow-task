@@ -41,10 +41,10 @@ api_calls = [
         },
         "columns": ['period', 'productName', 'activityName', 'unitName', 'value'],
         "table_name": "renewable_generation_source",
-        "filter": lambda df: df[
-            ((df['activityName'] == 'Generation') & (df['unitName'] == 'billion kilowatthours')) | 
-            (df['activityName'] == 'Capacity')
-        ],
+        # "filter": lambda df: df[
+        #     ((df['activityName'] == 'Generation') & (df['unitName'] == 'billion kilowatthours')) | 
+        #     (df['activityName'] == 'Capacity')
+        # ],
         "dtype": {
             'period': 'DATE', 
             'productName': 'VARCHAR(255)',

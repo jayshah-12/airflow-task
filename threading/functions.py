@@ -1,4 +1,3 @@
-# functions.py
 
 import requests
 import pandas as pd
@@ -14,9 +13,17 @@ base_url = "https://api.eia.gov/v2/"
 db_lock = threading.Lock()
 
 def fetch_data(api_call, api_key, mysql_credentials):
+    """
+    Function to fetch data from api using multithreading
+    Args:
+        api_call: Dictionary of configuration of each api call
+        api_key: Secret api key
+        mysql_credentials: Mysql credentials to store data in mysql
+    """
+
     url = f"{base_url}{api_call['url']}"
     params = api_call['params']
-    params['api_key'] = api_key  # Include the API key in the parameters
+    params['api_key'] = api_key  
     dtype = api_call['dtype']
     try:
         # Fetch total records to set the range of offsets
@@ -30,14 +37,14 @@ def fetch_data(api_call, api_key, mysql_credentials):
       
  
         # Thread executor to fetch data
-        with ThreadPoolExecutor(max_workers=2) as executor:
+        with ThreadPoolExecutor(max_workers=5) as executor:
             offset_map = {}      #map the offset with future object result
             for offset in range(0, total_records, 5000):
                 # temp params to avoid offset change in the main params
                 temp_params = params.copy()
                 temp_params['offset'] = offset  # Set the specific offset for this request
 
-                print(f"Submitting request for offset: {offset}")  # Debug statement
+                print(f"Submitting request for offset: {offset}") 
                 future = executor.submit(requests.get, url, temp_params)  # Use the local copy
                 offset_map[future] = offset
                 # print(offset_map)
@@ -62,14 +69,9 @@ def fetch_data(api_call, api_key, mysql_credentials):
                             # Insert data into MySQL
                             with db_lock:
                                 mysql_connect(df,api_call['table_name'],mysql_credentials,offset,dtype)
-                                # engine = create_engine(
-                                #     f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
-                                # df.to_sql(api_call['table_name'], engine, if_exists='append', index=False, dtype=dtype)
-                                # print(f"Inserted {len(df)} records into {api_call['table_name']} at offset {offset}.")
                                 time.sleep(0.5)  # Sleep for rate limiting
 
-                    else:
-                        print(f"Unexpected response structure for offset {offset}: {data}")
+                   
 
                 except requests.exceptions.HTTPError as e:
                     # Display error message for the specific offset
@@ -82,8 +84,16 @@ def fetch_data(api_call, api_key, mysql_credentials):
         failed_offset.append(offset)
 
 def mysql_connect(df, table_name, mysql_credentials, offset,dtype):
-    engine = create_engine(
-        f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
+    """
+    Function to store dataframe into mysql database
+     Args:
+        df: The dataframe to be stored
+        table_name: the table name in which data is stored
+        Mysql_credentials: Mysql credentials to execute the stored procedure
+        dtype: datatype of columns 
+        
+    """
+    engine = create_engine(f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
     df.to_sql(table_name, engine, if_exists='append', index=False,dtype=dtype)
     print(f"Inserted {len(df)} records into {table_name} at offset {offset}.")
 
@@ -91,8 +101,10 @@ def mysql_connect(df, table_name, mysql_credentials, offset,dtype):
 def call_stored_procedure(proc_name, mysql_credentials):
     """
     Execute a stored procedure in MySQL.
-    :param proc_name: Name of the stored procedure to call.
-    :param mysql_credentials: Dictionary with MySQL connection details.
+     Args:
+        proce_name: Name of the stored procedure to be executed
+        Mysql_credentials: Mysql credentials to execute the stored procedure
+        
     """
     try:
         with mysql.connector.connect(
