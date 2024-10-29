@@ -1,4 +1,3 @@
-
 import requests
 import pandas as pd
 from sqlalchemy import create_engine
@@ -34,22 +33,28 @@ def fetch_data(api_details, api_key, no_of_records=None):
 
         if no_of_records is not None and len(complete_data) >= no_of_records:
             return complete_data.iloc[:no_of_records]
+        
         print(f"Fetched {len(complete_data)} records.")
     
     return complete_data
 
-def insert_data_to_mysql(dataframe, table_name, mysql_credentials):
+def insert_data_to_mysql(dataframe, table_name, mysql_credentials, dtype_mapping=None):
     """
     Insert DataFrame into MySQL.
     :param dataframe: DataFrame to insert.
     :param table_name: Target table name.
     :param mysql_credentials: Dictionary with MySQL connection details.
+    :param dtype_mapping:  dictionary with column data types.
     """
     connection_string = f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}"
     engine = create_engine(connection_string)
 
     with engine.begin() as connection:
-        dataframe.to_sql(table_name, con=connection, if_exists='replace', index=False)
+        if dtype_mapping:
+            # Specify data types during insertion
+            dataframe.to_sql(table_name, con=connection, if_exists='replace', index=False, dtype=dtype_mapping)
+        else:
+            dataframe.to_sql(table_name, con=connection, if_exists='replace', index=False)
     
     print(f"Data stored in table '{table_name}'.")
 
@@ -75,7 +80,7 @@ def call_stored_procedure(proc_name, mysql_credentials):
 
 def process_api_calls(api_calls, mysql_credentials, api_key):
     """
-    Process the apis to call the functions
+    Process the APIs to call the functions.
     :param api_calls: List of dictionaries containing API call details.
     :param mysql_credentials: Dictionary with MySQL connection details.
     :param api_key: API key to access the service.
@@ -83,9 +88,34 @@ def process_api_calls(api_calls, mysql_credentials, api_key):
     for call in api_calls:
         data = fetch_data(call, api_key, no_of_records=call.get("no_of_records"))
         
-
         if 'filter' in call:
             data = call['filter'](data)
         if 'columns' in call:
             data = data[call['columns']]
-        insert_data_to_mysql(data, call["table_name"], mysql_credentials)
+        
+        # Prepare dtype mapping if specified
+        dtype_mapping = call.get('data_types', None)
+
+        # Insert data into MySQL
+        insert_data_to_mysql(data, call["table_name"], mysql_credentials, dtype_mapping)
+
+# Example of how to call the process_api_calls function
+# api_calls = [
+#     {
+#         "base_url": "https://api.example.com/",
+#         "url": "co2-emissions/co2-emissions-aggregates/data/",
+#         "params": {
+#             "frequency": "annual",
+#             "data[0]": "value"
+#         },
+#         "columns": ['period', 'fuel-name', 'state-name', 'value', 'value-units'],
+#         "table_name": "emission_co2_source",
+#         "data_types": {
+#             'period': 'datetime64[ns]',
+#             'fuel-name': 'string',
+#             'state-name': 'string',
+#             'value': 'float64',
+#             'value-units': 'string'
+#         }
+#     }
+# ]

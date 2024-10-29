@@ -23,8 +23,7 @@ def fetch_data(api_url, params, no_of_records=None):
 
     params['offset'] = 0
     # complete_data = pd.DataFrame()
-    total_records_fetched = 0  
-
+    total_records_fetched = 0
     while True:
         response = requests.get(api_url, params=params)
       

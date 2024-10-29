@@ -1,18 +1,27 @@
-
-import requests
-import pandas as pd
-from sqlalchemy import create_engine
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 import time
+import pandas as pd
+import requests
+from sqlalchemy import create_engine
 import mysql.connector
 from mysql.connector import Error
+from datetime import date
+from pydantic import BaseModel, constr, condecimal, ValidationError,conint
+
+
+# class energy_consumption(BaseModel):
+#     period: conint(ge=1)                   
+#     fuel_name: constr(min_length=1)  
+#     value: condecimal         
+#     value_units: constr(min_length=1) 
+    
 
 failed_offset=[]
 base_url = "https://api.eia.gov/v2/"
 db_lock = threading.Lock()
 
-def fetch_data(api_call, api_key, mysql_credentials):
+def fetch_data(api_call, api_key, mysql_credentials,dtype):
     """
     Function to fetch data from api using multithreading
     Args:
@@ -34,9 +43,7 @@ def fetch_data(api_call, api_key, mysql_credentials):
         total_records = int(json_data['response']['total'])
         print(f"Total records available: {total_records}")
 
-      
- 
-        # Thread executor to fetch data
+     
         with ThreadPoolExecutor(max_workers=5) as executor:
             offset_map = {}      #map the offset with future object result
             for offset in range(0, total_records, 5000):
@@ -45,10 +52,11 @@ def fetch_data(api_call, api_key, mysql_credentials):
                 temp_params['offset'] = offset  # Set the specific offset for this request
 
                 print(f"Submitting request for offset: {offset}") 
-                future = executor.submit(requests.get, url, temp_params)  # Use the local copy
+                future = executor.submit(requests.get, url, temp_params)  # Use the temp params
                 offset_map[future] = offset
+                time.sleep(0.2)
                 # print(offset_map)
-
+                
             for future in as_completed(offset_map): 
                 offset = offset_map[future]
                 try:
@@ -66,9 +74,12 @@ def fetch_data(api_call, api_key, mysql_credentials):
 
                             if 'columns' in api_call:
                                 df = df[api_call['columns']]
-                            # Insert data into MySQL
+                            print(df.dtypes)
+                            df['value'] = pd.to_numeric(df['value'], errors='coerce')
+                          
+                              
                             with db_lock:
-                                mysql_connect(df,api_call['table_name'],mysql_credentials,offset,dtype)
+                                # mysql_connect(df,api_call['table_name'],mysql_credentials,offset,dtype) 
                                 time.sleep(0.5)  # Sleep for rate limiting
 
                    
@@ -83,19 +94,24 @@ def fetch_data(api_call, api_key, mysql_credentials):
         print(f"An error occurred while fetching data for {api_call['table_name']}: {str(e)}")
         failed_offset.append(offset)
 
-def mysql_connect(df, table_name, mysql_credentials, offset,dtype):
+def mysql_connect(df, table_name, mysql_credentials, offset, dtype):
     """
     Function to store dataframe into mysql database
-     Args:
+    Args:
         df: The dataframe to be stored
         table_name: the table name in which data is stored
-        Mysql_credentials: Mysql credentials to execute the stored procedure
-        dtype: datatype of columns 
-        
+        mysql_credentials: Mysql credentials to execute the stored procedure
+        dtype: datatype of columns
     """
     engine = create_engine(f"mysql+pymysql://{mysql_credentials['username']}:{mysql_credentials['password']}@{mysql_credentials['host']}/{mysql_credentials['database']}")
-    df.to_sql(table_name, engine, if_exists='append', index=False,dtype=dtype)
-    print(f"Inserted {len(df)} records into {table_name} at offset {offset}.")
+
+     # Debugging: print the first few rows of the DataFrame
+
+    try:
+        df.to_sql(table_name, engine, if_exists='append', index=False, dtype=dtype)
+        print(f"Inserted {len(df)} records into {table_name} at offset {offset}.")
+    except Exception as e:
+        print(f"Error inserting into {table_name}: {str(e)}")
 
 
 def call_stored_procedure(proc_name, mysql_credentials):
