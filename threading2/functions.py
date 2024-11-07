@@ -90,6 +90,7 @@ def fetch_data(api_call, api_key, mysql_credentials):
                 offset_map[future] = offset
                 time.sleep(0.2)
 
+
             for future in as_completed(offset_map):
                 offset = offset_map[future]
                 try:

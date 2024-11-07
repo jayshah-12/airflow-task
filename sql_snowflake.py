@@ -1,48 +1,43 @@
-import mysql.connector
-import snowflake.connector
 import pandas as pd
- 
-# Step 1: Connect to MySQL``
-mysql_config = {
-    'user': 'root',
-    'password': 'root',
-    'host': 'localhost',
-    'database': 'eia'
-}
-
-mysql_conn = mysql.connector.connect(**mysql_config)
-mysql_cursor = mysql_conn.cursor()
-
-mysql_cursor.execute("SELECT * FROM temp_table")
-data = mysql_cursor.fetchall()
+from sqlalchemy import create_engine
 
 
-columns = [i[0] for i in mysql_cursor.description]
-print(columns)
-snowflake_config = {
-    'user': 'JAYSHAH123',
-    'password': 'Jayshah12',
-    'account': 'jc34516.ap-southeast-1',
-    'warehouse': 'COMPUTE_WH',
-    'database': 'MY_WAREHOUSE',
-    'schema': 'MYSCHEMA'
-}
-
-snowflake_conn = snowflake.connector.connect(**snowflake_config)
-snowflake_cursor = snowflake_conn.cursor()
+mysql_user = 'root'
+mysql_password = 'root'
+mysql_host = 'localhost'
+mysql_database = 'eia'
 
 
-df = pd.DataFrame(data, columns=columns)
+snowflake_user = 'JAYSHAH123'
+snowflake_password = 'Jayshah12'
+snowflake_account = 'jc34516.ap-southeast-1'
+snowflake_database = 'MY_WAREHOUSE'
+snowflake_schema = 'MYSCHEMA'
 
-for index, row in df.iterrows():
-    insert_query = f"INSERT INTO test ({', '.join(columns)}) VALUES ({', '.join(['%s'] * len(row))})"
-    snowflake_cursor.execute(insert_query, tuple(row))
 
 
-snowflake_conn.commit()
 
-# Close the connections
-mysql_cursor.close()
-mysql_conn.close()
-snowflake_cursor.close()
-snowflake_conn.close()
+
+tables_to_transfer = ['daily_generation_source']  
+
+
+mysql_engine = create_engine(f'mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_database}')
+
+snowflake_engine = create_engine(f'snowflake://{snowflake_user}:{snowflake_password}@{snowflake_account}/{snowflake_database}/{snowflake_schema}')
+batch_size=10000
+
+for table in tables_to_transfer:
+    with mysql_engine.connect() as mysql_connection:
+        query = f'SELECT * FROM {table}' 
+        df = pd.read_sql(query, mysql_connection)
+
+    for start in range(0, df.shape[0], batch_size):
+        end = min(start + batch_size, df.shape[0])
+        chunk = df.iloc[start:end]
+        
+        with snowflake_engine.connect() as snowflake_connection:
+            chunk.to_sql(table, con=snowflake_connection, if_exists='append', index=False)
+
+    print(f"Data for table '{table}' transferred from MySQL to Snowflake successfully!")
+
+print("All tables transferred successfully!")

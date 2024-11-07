@@ -16,6 +16,7 @@ api_calls = [
         'value': Float(),
         'value-units': String(50)
 }
+
     },
     {
         "url": "co2-emissions/co2-emissions-aggregates/data/",

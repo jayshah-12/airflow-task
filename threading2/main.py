@@ -20,3 +20,4 @@ for api_call in api_calls:
     # Call stored procedure after data insertion
     # call_stored_procedure('calculate_co2_reduction', mysql_credentials)
     print(failed_offset)
+
